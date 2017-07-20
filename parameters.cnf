@@ -1,0 +1,69 @@
+[pre_process]
+stemmer = None #Snowball or Porter or Lancaster
+
+[stream]
+start_y = 2012
+start_m = 8
+start_d = 1
+
+end_y = 2013
+end_m = 1
+end_d = 1
+
+host = 10.4.8.114
+user = xiewei
+passwd = 123456
+db = tweetstream
+table = us_stream
+
+[detection]
+
+start_t = 2012-08-07 00:00:00
+end_t = 2013-01-01 00:00:00
+
+thread_gap = 30
+
+capacity_for_cleaning = 1000000
+
+#detection_signi_type = a
+#threshold_for_cleaning = 1e-3
+#detection_threshold = 3e-4
+
+
+detection_signi_type = s
+threshold_for_cleaning = 0.01
+detection_threshold = 25.
+
+[acceleration]
+unit_size = 60.
+window_size1 = 15.
+window_size2 = 30.
+
+
+[significance]
+window_size = 15
+cycle = 24*60
+average = 7.0/15  #15.0/(15)
+
+
+[sketch]
+sketch_bucket_size = 5000
+num_topics = 5
+probability_threshold = 0.
+active_window_size = 15   # minutes
+
+threshold_for_cleaning = math.exp(-12.0)
+capacity_for_cleaning = 2000*2000
+
+
+[post_process]
+threshold_for_similarity = 2.0
+topic_number_related_users = 20
+topic_number_related_tweets = 20
+word_number_related_users = 5
+word_number_related_tweets = 5
+
+[output]
+debug_info = False
+
+
