@@ -298,15 +298,15 @@ class TopicSketch:
 
         if eval(config.get('output', 'debug_info')):
             self.output.write('high_prob_words\n')
-            self.output.write(high_prob_words) #debugging
+            self.output.write(str(high_prob_words)) #debugging
             self.output.write('\npost_res\n')
-            self.output.write(post_res) #debugging
+            self.output.write(str(post_res)) #debugging
             self.output.write('\n')
 
         flag, word_level_results, _ = post_res
         if flag:
             event = dict()
-            event['detection_time'] = datetime.utcfromtimestamp(self.timestamp)
+            event['detection_time'] = str(datetime.utcfromtimestamp(self.timestamp))
             event_words = list()
             for prob_word, word_flag in zip(high_prob_words, word_level_results):
                 _word = prob_word[0]
