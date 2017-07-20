@@ -53,7 +53,7 @@ probability_threshold = 0.
 active_window_size = 15   # minutes
 
 threshold_for_cleaning = math.exp(-12.0)
-capacity_for_cleaning = 5000*5000
+capacity_for_cleaning = 5000*2000
 
 
 [post_process]
